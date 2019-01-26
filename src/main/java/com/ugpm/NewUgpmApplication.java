@@ -1,12 +1,11 @@
 package com.ugpm;
 
-import com.ugpm.configuration.TestConfig;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
+@MapperScan("com.ugpm.dao")
 public class NewUgpmApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NewUgpmApplication.class, args);

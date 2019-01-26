@@ -3,6 +3,8 @@ package com.ugpm;
 import com.ugpm.configuration.TestConfig;
 import com.ugpm.domain.SpringIOCTest;
 import com.ugpm.domain.TestBean;
+import com.ugpm.pojo.Cart;
+import com.ugpm.service.CartService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +57,17 @@ public class NewUgpmApplicationTests {
 	public void testSpringIOCTest(){
 		springIOCTest.test();
 
+	}
+
+	@Autowired
+	public CartService cartService;
+	@Test
+	public void testInsert(){
+		Cart cart=new Cart();
+		cart.setId(4);
+		cart.setUserId(119);
+		cart.setProductId(120);
+		cartService.insert(cart);
 	}
 }
 

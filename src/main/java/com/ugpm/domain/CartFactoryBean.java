@@ -13,7 +13,7 @@ public class CartFactoryBean implements FactoryBean<Cart> {
     //返回一个Cart对象，这个对象会添加到容器中
     @Override
     public Cart getObject() throws Exception {
-        System.out.println("CartFactoryBean getObject new Cart");
+        System.out.println("CartFactoryBean getObject new Car");
         return new Cart();
     }
 

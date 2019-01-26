@@ -3,12 +3,15 @@
 <mapper namespace="com.ugpm.dao.CartMapper">
 
     <sql id="Base_Column_List">
-        id, user_id, product_id, quantity, checked, create_time, update_time
+        id, userId, productId
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.ugpm.pojo.Cart">
         select
         <include refid="Base_Column_List" />
-        from mmall_cart
+        from cart
         where id = #{id,jdbcType=INTEGER}
     </select>
+    <insert id="insert">
+        insert into cart (id,userId,productId) VALUES (#{id},#{userId},#{productId})
+    </insert>
 </mapper>

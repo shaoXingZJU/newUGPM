@@ -2,11 +2,12 @@ package com.ugpm.dao;
 
 
 import com.ugpm.pojo.Cart;
+import org.apache.ibatis.annotations.Param;
 
 public interface CartMapper {
 //    int deleteByPrimaryKey(Integer id);
 //
-//    int insert(Cart record);
+    int insert(Cart record);
 //
 //    int insertSelective(Cart record);
 
