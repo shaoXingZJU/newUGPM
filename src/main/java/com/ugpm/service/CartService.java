@@ -3,6 +3,8 @@ package com.ugpm.service;
 import com.ugpm.dao.CartMapper;
 import com.ugpm.pojo.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class CartService {
+    @EventListener(classes = {ApplicationEvent.class})
+    public void listen(ApplicationEvent event){
+        System.out.println("监听到事件："+event);
+    }
     @Autowired
     public CartMapper cartMapper;
 

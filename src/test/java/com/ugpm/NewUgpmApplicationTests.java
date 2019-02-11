@@ -8,9 +8,12 @@ import com.ugpm.service.CartService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationEvent;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.event.ApplicationContextEvent;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -69,5 +72,11 @@ public class NewUgpmApplicationTests {
 		cart.setProductId(120);
 		cartService.insert(cart);
 	}
+	@Test
+	public void testAppListener(){
+		context.publishEvent(new ApplicationEvent(new String("我发布的事件")) {
+		});
+	}
+
 }
 

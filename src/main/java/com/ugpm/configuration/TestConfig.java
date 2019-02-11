@@ -2,7 +2,6 @@ package com.ugpm.configuration;
 
 import com.ugpm.domain.CartFactoryBean;
 import com.ugpm.domain.TestBean;
-import com.ugpm.pojo.Cart;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
@@ -11,6 +10,7 @@ import org.springframework.context.annotation.*;
  * @ Date       ：Created in 13:43 2019/1/10
  */
 @Configuration
+@ComponentScan("com.ugpm.ext")
 @PropertySource(value = {"classpath:my.properties"},ignoreResourceNotFound = true)
 public class TestConfig {
     @Value("${myTest}")
